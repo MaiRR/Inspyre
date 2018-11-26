@@ -36,3 +36,10 @@ keriazisD -- 2018-11-26 12:54
 Added databases and basic flask app
 ==============================================================
 
+johalP -- 2018-11-26 1:11
+--------------------------------------------------------------
+Added the project description to the README, created branch and
+added instructions to run project to the README in this branch
+for the future when that task is assigned to us, added landing
+page template.
+==============================================================
