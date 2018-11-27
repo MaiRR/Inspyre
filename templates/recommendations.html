@@ -1,1 +1,20 @@
 <!-- template for recommendations page -->
+
+{% extends "index.html" %}
+
+{% block title %}
+Recommendations
+{% endblock %}
+
+{% block content %}
+
+  <div id="word">
+    Word of the Day: {{word}} <br>
+    {{definition}}
+  </div>
+  <div class="buttons">
+    <a class="btn btn-primary" href="login.html" role="button">Login</a>
+    <a class="btn btn-primary" href="register.html" role="button">Register</a>
+  </div>
+
+{% endblock %}
