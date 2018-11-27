@@ -15,6 +15,7 @@ def image_of_the_day():
     with urllib.request.urlopen(url) as f:
         result = json.loads(f.read())
     images = result['images']  # All images
+    random.seed(time.time())
     rand_image = random.choice(images)
     image_path = rand_image['url']
     return prefix + image_path
