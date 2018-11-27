@@ -43,3 +43,9 @@ added instructions to run project to the README in this branch
 for the future when that task is assigned to us, added landing
 page template.
 ==============================================================
+
+keriazisD -- 2018-11-26 20:30
+--------------------------------------------------------------
+Added reserved data directory
+==============================================================
+
