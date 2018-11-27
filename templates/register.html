@@ -1,0 +1,30 @@
+<!-- template for registration form -->
+
+{% extends "index.html" %}
+
+{% block title %}
+Register
+{% endblock %}
+
+{% block content %}
+
+  <div class="flash">
+    {% set msgs = get_flashed_messages() %}
+      {% for each in msgs %}
+        <strong>{{each}}</strong>
+        <br>
+      {% endfor %}
+  </div>
+
+  <div class="input">
+    <form action="/auth" method="POST">
+      <input type="text" name="username" placeholder="Username">
+      <input type="password" name="password" placeholder="Password">
+      <input type="submit" value="Register">
+    </form>
+    <form action="/">
+      <input type="submit" value="Cancel">
+    </form>
+  </div>
+
+{% endblock %}

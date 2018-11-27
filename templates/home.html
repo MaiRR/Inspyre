@@ -1,0 +1,26 @@
+<!-- template for home page -->
+
+{% extends "index.html" %}
+
+{% block title %}
+Home Page
+{% endblock %}
+
+{% block content %}
+
+  <div class="navbar">
+  </div>
+
+  <h1>Welcome, {{name}}!</h1>
+
+  <div id="poem">
+    {{poem}}
+  </div>
+
+  <div class="buttons">
+    <a class="btn btn-primary" href="favorites.html" role="button">Favorites</a>
+    <a class="btn btn-primary" href="recommendations.html" role="button">Recommendations</a>
+    <!-- Goal of the Day -->
+  </div>
+
+{% endblock %}

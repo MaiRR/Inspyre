@@ -1,22 +1,20 @@
 <!-- template for landing page -->
 
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Get Inspyred</title>
-    </head>
-    <body background="{{background}}">
-        <div id="word">
-          Word of the Day: {{word}} <br>
-          {{definition}}
-        </div>
-        <div id="buttons">
-          <form action="/login">
-              <input type="submit" value="Login">
-          </form>
-          <form action="/login">
-              <input type="submit" value="Register">
-          </form>
-        </div>
-    </body>
-</html>
+{% extends "index.html" %}
+
+{% block title %}
+Get Inspyred
+{% endblock %}
+
+{% block content %}
+
+  <div id="word">
+    Word of the Day: {{word}} <br>
+    {{definition}}
+  </div>
+  <div class="buttons">
+    <a class="btn btn-primary" href="login.html" role="button">Login</a>
+    <a class="btn btn-primary" href="register.html" role="button">Register</a>
+  </div>
+
+{% endblock %}
