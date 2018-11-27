@@ -103,7 +103,6 @@ venv.bak/
 # mypy
 .mypy_cache/
 
-
 # Text Backup Files #
 *.s[a-w][a-z]
 *~
