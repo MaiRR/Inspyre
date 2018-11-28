@@ -1,0 +1,9 @@
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#word {
+  padding-top: 30px;
+}
