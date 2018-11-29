@@ -117,3 +117,6 @@ venv.bak/
 # Filenames with Special Characters #
 **/*[\\/\:;*?!'"<>|$º•¶§∞¢£]*
 
+# NFS Files
+.nfs*
+
