@@ -1,9 +1,24 @@
-.content {
+.flexbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+}
+
+.footer {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 #word {
-  padding-top: 30px;
+  width: 300px;
+  background-color: white;
+}
+
+.btn {
+  margin: 5px;
 }
