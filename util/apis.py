@@ -28,9 +28,7 @@ def word_pair_of_the_day():
     app_id = util.config.get_oxford_api_id()
     app_key = util.config.get_oxford_api_keys()
     source_lang = 'en'
-    filters_raw = \
-        'lexicalCategory=noun,adjective,adverb,verb;' \
-        'registers=rare'
+    filters_raw = 'lexicalCategory=noun,adjective,adverb,verb'
     filters_basic = urllib.parse.quote(filters_raw)
     url = \
         'https://od-api.oxforddictionaries.com/api/v1/wordlist/' \
