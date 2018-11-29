@@ -3,6 +3,7 @@ import sqlite3
 import json
 import random
 import time
+from string import ascii_letters, digits
 
 CUR_DIR = os.path.dirname(__file__)  # Absolute path to current directory
 ROOT_DIR = os.path.join(CUR_DIR, os.path.pardir)  # Location of root directory
@@ -10,8 +11,8 @@ DATA_DIR = os.path.join(ROOT_DIR, 'data')  # Location of data directory
 DB_FILE = os.path.join(DATA_DIR, 'data.db')  # Location of database file
 APIS_FILE = os.path.join(DATA_DIR, 'apis.json')  # Location of apis config file
 
-# Set seed based on time in case it is reset
-random.seed(time.time())
+# RFC 4648 "URL and Filename safe" Base 64 Alphabet
+CHARSET = ascii_letters + digits + '-_'
 
 
 def use_test_db():
