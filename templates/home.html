@@ -20,8 +20,13 @@ Home Page
   <div class="buttons">
     <a class="btn btn-primary" href="favorites" role="button">Favorites</a>
     <a class="btn btn-primary" href="recommendations" role="button">Recommendations</a>
-    <!-- Goal of the Day -->
+  </div>
 
+  <!-- Figure out how to display only if no goal in database -->
+  <div class="goal">
+    <form action="/updateGoal" method="POST">
+      <input type="text" name="goal" placeholder="Goal of the Day">
+    </form>
   </div>
 
 {% endblock %}
