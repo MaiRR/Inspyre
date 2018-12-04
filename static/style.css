@@ -1,24 +1,54 @@
-.flexbox {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.container {
-  display: flex;
-}
-
 .footer {
   display: flex;
   justify-content: center;
-  align-items: center;
-}
-
-#word {
-  width: 300px;
-  background-color: white;
+  /* width: 100%; */
+  text-align: center;
+  margin: auto;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  flex-wrap: wrap;
+  background: rgb(34,34,34); /* for IE */
+  background: rgba(34,34,34,0.75);
+  color: white;
 }
 
 .btn {
   margin: 5px;
 }
+
+.middle {
+  display: flex;
+  height: 200px;
+  width: 500px;
+  text-align: center;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  flex-wrap: wrap;
+}
+
+.word {
+  height: 100px;
+  width: 100%;
+  text-align: center;
+
+  background: rgb(34,34,34); /* for IE */
+  background: rgba(34,34,34,0.75);
+  color: white;
+}
+
+.centered {
+  display: flex;
+  justify-content: center;
+}
+
+#login, #signup {
+  width: 25%;
+  height: 50px;
+}
+
