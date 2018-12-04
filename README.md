@@ -53,7 +53,7 @@ We use the Oxford API to generate the word of the day and its definition which w
 where `ID` is your application id and the `KEY`s are the keys you set up.
 
 2. Bing API
-We use the Bing API to get pcitures which we use for our background. To get a key..
+We use the Bing API to get pcitures which we use for our background.
 
 3. Poem API
 We use the Poem API to generate a random poem on the user's page in order to inspire them. No key is necessary, just a get request [request](https://www.poemist.com/api/v1/randompoems), location is at [here](https://poemist.github.io/poemist-apidoc/#misc-services)
