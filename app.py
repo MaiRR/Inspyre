@@ -14,7 +14,7 @@ app.secret_key = util.accounts.get_salt()
 def index():
     if util.accounts.is_logged_in(session):
         return render_template(
-            'index_user.html',
+            'home.html',
             background=util.apis.image_of_the_day(),
         )
     word, definition = util.apis.definition_of_the_day()
@@ -117,4 +117,3 @@ if __name__ == '__main__':
     util.accounts.create_table()
     app.debug = True  # Set to `False` before release
     app.run()
-

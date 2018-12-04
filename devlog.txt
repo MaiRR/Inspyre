@@ -90,3 +90,9 @@ johalP -- 2018-12-04 7:21
 Added some styling to login and signup pages, added navbar to
 homepage template
 ==============================================================
+
+johalP -- 2018-12-04 3:12
+--------------------------------------------------------------
+Fixed homepage link for logged in users, added logout button
+and functionality to home navbar
+==============================================================
