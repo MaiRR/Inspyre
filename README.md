@@ -60,4 +60,15 @@ We use the Poem API to generate a random poem on the user's page in order to ins
 
 4. TasteDive API
 We use the TasteDive API to provide reccomendations for books, movies, and music. Create a key [here](https://tastedive.com/account/api_access) 
+Once you have the key, add an entry to data/apis.json (create it if it doesn't exist) in the following style:
+
+```json
+{
+    "taste_api": {
+	"key": "KEY"
+    },  
+}
+```
+
+
 
