@@ -1,0 +1,30 @@
+<!-- template for landing page -->
+
+{% extends "index.html" %}
+
+{% block title %}
+Get Inspyred
+{% endblock %}
+
+{% block content %}
+
+  <div>
+    <div class="middle">
+      <div class="cover">
+        Word of the Day: {{word}} <br>
+        {{definition}}
+      </div>
+      <div class="container centered">
+        <a class="btn btn-primary" href="login" role="button" id="login">
+          Login
+        </a>
+        <a class="btn btn-primary" href="signup" role="button" id="signup">
+          Sign Up
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+{% endblock %}
+

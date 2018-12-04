@@ -12,25 +12,18 @@ app.secret_key = util.accounts.get_salt()
 
 @app.route('/')
 def index():
+    if util.accounts.is_logged_in(session):
+        return render_template(
+            'index_user.html',
+            background=util.apis.image_of_the_day(),
+        )
     word, definition = util.apis.definition_of_the_day()
     return render_template(
-        'index.html',
+        'index_anon.html',
         background=util.apis.image_of_the_day(),
         definition=definition,
         word=word,
     )
-
-#  @app.route('/login')
-#  def login():
-    #  return render_template(
-        #  'login.html',
-    #  )
-
-#  @app.route('/register')
-#  def register():
-    #  return render_template(
-        #  'register.html',
-    #  )
 
 
 @app.route('/login', methods=['GET', 'POST'])
@@ -39,7 +32,10 @@ def login():
         if util.accounts.is_logged_in(session):
             return redirect('/')
         else:
-            return render_template('login.html')
+            return render_template(
+                'login.html',
+                background=util.apis.image_of_the_day(),
+            )
 
     # Get values passed via POST
     username = request.form.get('username')
@@ -63,7 +59,10 @@ def signup():
         if util.accounts.is_logged_in(session):
             return redirect('/')
         else:
-            return render_template('signup.html')
+            return render_template(
+                'signup.html',
+                background=util.apis.image_of_the_day(),
+            )
 
     # Get values passed via POST
     username = request.form.get('username')
