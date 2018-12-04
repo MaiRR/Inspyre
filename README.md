@@ -29,3 +29,14 @@ $ . venv/bin/activate
 (venv) $ python3 app.py 
 ```
 6. Navigate to `localhost:5000` on your web browser
+
+
+# APIs used in project:
+1. Oxford API
+We use the Oxford API to generate the word of the day and its definition which we display on the home page. To get a key...
+2. Bing API
+We use the Bing API to get pcitures which we use for our background. To get a key..
+3. Poem API
+We use the Poem API to generate a random poem on the user's page in order to inspire them. No key is necessary, location is at [here](https://poemist.github.io/poemist-apidoc/#misc-services)
+4. TasteDive API
+We use the TasteDive API to provide reccomendations for books, movies, and music.
