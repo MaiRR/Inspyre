@@ -6,7 +6,7 @@ Team RedSky -- Puneet Johal, Daniel Keriazis, Mai Rachlevsky
 
 Users are inspired with content such as poems, vocabulary words, and recommendations for books, movies, and music. Users are able to favorite content that they like for future reference and set a "Goal of the Day" to keep on track and stay motivated.
 
-# To run our project:
+## To run our project:
 1. Clone our repo
 ```
 $ git clone git@github.com:MaiRachlevsky/Inspyre.git
@@ -29,3 +29,28 @@ $ . venv/bin/activate
 (venv) $ python3 app.py 
 ```
 6. Navigate to `localhost:5000` on your web browser
+
+## Getting the necessary APIs
+
+### Oxford Dictionary
+
+1. Go [here](https://developer.oxforddictionaries.com/signup) to get your free application id
+
+2. Once you have the id, set up as many keys as you want (up to 5 on the free version) by following the site's documentation
+
+3. Add an entry to data/apis.json (create it if it doesn't exist) in the following style:
+
+```json
+{
+    "oxford_api": {
+            "id": "ID",
+            "keys": [
+                "KEY1",
+                "KEY2",
+                # etc.
+        ]
+    },
+}
+```
+where `ID` is your application id and the `KEY`s are the keys you set up.
+

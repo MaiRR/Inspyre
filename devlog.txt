@@ -79,3 +79,9 @@ johalP -- 2018-11-29 1:19
 Worked on CSS styling, tried to fix div placement on the
 landing page
 ==============================================================
+
+keriazisD -- 2018-12-04 00:01
+--------------------------------------------------------------
+Updated README.md with API instructions
+==============================================================
+
