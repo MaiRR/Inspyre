@@ -29,31 +29,53 @@ Home Page
       <form class="form-inline my-2 my-lg-0" action="/logout">
         <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Logout</button>
       </form>
-<!--
-      <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="search" placeholder="Looking for something?" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-      </form>
--->
     </div>
   </nav>
 
-  <h1>Welcome, {{name}}!</h1>
-
-  <div id="poem">
-    {{poem}}
+  <div class="grid">
+    <div class="row" style="padding: 15px;">
+      <div class="col-lg-4 divide"></div>
+      <div class="col-lg-4 content">
+        <h1>Welcome, {{name}}!</h1>
+      </div>
+      <div class="col-lg-4 divide"></div>
+    </div>
+    <div class="row" style="padding: 15px;">
+      <div class="col-lg-4 divide"></div>
+      <div class="col-lg-4 content">
+        <!-- Figure out how to display only if no goal in database -->
+        <form action="/updateGoal" method="POST">
+          <input type="text" name="goal" placeholder="Goal of the Day">
+        </form>
+      </div>
+      <div class="col-lg-4 divide"></div>
+    </div>
   </div>
 
-  <div class="buttons">
-    <a class="btn btn-primary" href="favorites" role="button">Favorites</a>
-    <a class="btn btn-primary" href="recommendations" role="button">Recommendations</a>
+<!--
+
+  <div class="flex-parent">
+    <div class="centered">
+      <h1>Welcome, {{name}}!</h1>
+    </div>
+
+    <div id="poem">
+      {{poem}}
+    </div>
+
+    <div class="buttons">
+      <a class="btn btn-primary" href="favorites" role="button">Favorites</a>
+      <a class="btn btn-primary" href="recommendations" role="button">Recommendations</a>
+    </div>
+
+
+    <div class="goal">
+      <form action="/updateGoal" method="POST">
+        <input type="text" name="goal" placeholder="Goal of the Day">
+      </form>
+    </div>
   </div>
 
-  <!-- Figure out how to display only if no goal in database -->
-  <div class="goal">
-    <form action="/updateGoal" method="POST">
-      <input type="text" name="goal" placeholder="Goal of the Day">
-    </form>
-  </div>
+-->
 
 {% endblock %}
