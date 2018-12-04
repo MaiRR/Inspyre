@@ -5,29 +5,34 @@ Signup
 {% endblock %}
 
   {% block content %}
-    <form action="/signup" method = "POST">
-      Enter a new username: <br>
-      <input type="text" name="username"> <br>
-      <font color="red"> {{username_error}} </font>
-      {% if username_error %}
+    <div class="flex-parent">
+      <div class="centered">
+        <form action="/signup" method = "POST">
+          Enter a new username: <br>
+          <input type="text" name="username"> <br>
+          <font color="red"> {{username_error}} </font>
+          {% if username_error %}
+            <br>
+          {% endif %}
+          Password: <br>
+          <input type="password" name="password"> <br>
+          Confirm password: <br>
+          <input type="password" name="confirm"> <br> <br>
+          <button type="submit"> Sign Up </button>
+          <button type="cancel"> Cancel </button>
+        </form>
+
+        <font color="red"> {{password_error}} </font>
+        {% if password_error %}
         <br>
-      {% endif %}
-      Password: <br>
-      <input type="password" name="password"> </br>
-      Confirm password: <br>
-      <input type="password" name="confirm">
-      <button type="submit"> Log In </button>
-    </form>
+        {% endif %}
 
-    <font color="red"> {{password_error}} </font>
-    {% if password_error %}
-    <br>
-    {% endif %}
-
-    {% set msgs = get_flashed_messages() %}
-    {% for each in msgs %}
-   <font color="red"> {{ each }} </font>
-    <br>
-    {% endfor %}
+        {% set msgs = get_flashed_messages() %}
+        {% for each in msgs %}
+       <font color="red"> {{ each }} </font>
+        <br>
+        {% endfor %}
+      </div>
+    </div>
 
 {% endblock %}

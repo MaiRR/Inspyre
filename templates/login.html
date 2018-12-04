@@ -16,15 +16,18 @@ Login
       {% endfor %}
   </div>
 
-  <div class="input">
-    <form action="/auth" method="POST">
-      <input type="text" name="username" placeholder="Username">
-      <input type="password" name="password" placeholder="Password">
-      <input type="submit" value="Login">
-    </form>
-    <form action="/">
-      <input type="submit" value="Cancel">
-    </form>
+  <div class="flex-parent">
+    <div class="centered">
+      <form action="/auth" method="POST">
+        <input type="text" name="username" placeholder="Username">
+        <input type="password" name="password" placeholder="Password"><br><br>
+        <input type="submit" value="Login">
+        <input type="button" value="Cancel">
+      </form>
+      <form action="/">
+
+      </form>
+    </div>
   </div>
 
 {% endblock %}

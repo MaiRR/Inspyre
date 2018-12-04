@@ -42,9 +42,17 @@
   color: white;
 }
 
+.flex-parent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .centered {
   display: flex;
+  align-items: center;
   justify-content: center;
+
 }
 
 #login, #signup {
@@ -52,3 +60,6 @@
   height: 50px;
 }
 
+.input {
+  margin: 10px;
+}

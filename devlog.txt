@@ -85,3 +85,8 @@ keriazisD -- 2018-12-04 00:01
 Updated README.md with API instructions
 ==============================================================
 
+johalP -- 2018-12-04 7:21
+--------------------------------------------------------------
+Added some styling to login and signup pages, added navbar to
+homepage template
+==============================================================
