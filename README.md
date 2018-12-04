@@ -56,7 +56,7 @@ where `ID` is your application id and the `KEY`s are the keys you set up.
 We use the Bing API to get pcitures which we use for our background.
 
 3. Poem API
-We use the Poem API to generate a random poem on the user's page in order to inspire them. No key is necessary, just a get request [request](https://www.poemist.com/api/v1/randompoems), location is at [here](https://poemist.github.io/poemist-apidoc/#misc-services)
+We use the Poem API to generate a random poem on the user's page in order to inspire them. No key is necessary, just a get [request](https://www.poemist.com/api/v1/randompoems), location is at [here](https://poemist.github.io/poemist-apidoc/#misc-services)
 
 4. TasteDive API
 We use the TasteDive API to provide reccomendations for books, movies, and music. Create a key [here](https://tastedive.com/account/api_access) 
