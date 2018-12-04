@@ -32,13 +32,11 @@ $ . venv/bin/activate
 
 ## Getting the necessary APIs
 
-### Oxford Dictionary
-
-1. Go [here](https://developer.oxforddictionaries.com/signup) to get your free application id
-
-2. Once you have the id, set up as many keys as you want (up to 5 on the free version) by following the site's documentation
-
-3. Add an entry to data/apis.json (create it if it doesn't exist) in the following style:
+1. Oxford Dictionary API
+We use the Oxford API to generate the word of the day and its definition which we display on the home page. 
+    1. Go [here](https://developer.oxforddictionaries.com/signup) to get your free application id
+    2. Once you have the id, set up as many keys as you want (up to 5 on the free version) by following the site's documentation
+    3. Add an entry to data/apis.json (create it if it doesn't exist) in the following style:
 
 ```json
 {
@@ -53,10 +51,6 @@ $ . venv/bin/activate
 }
 ```
 where `ID` is your application id and the `KEY`s are the keys you set up.
-
-## APIs used in project:
-1. Oxford API
-We use the Oxford API to generate the word of the day and its definition which we display on the home page. To get a key...
 
 2. Bing API
 We use the Bing API to get pcitures which we use for our background. To get a key..
