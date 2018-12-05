@@ -8,13 +8,12 @@ Login
 
 {% block content %}
 
-  <div class="flash">
     {% set msgs = get_flashed_messages() %}
       {% for each in msgs %}
-        <strong>{{each}}</strong>
-        <br>
+        <div class="alert alert-danger" role="alert">
+          {{each}}
+        </div>
       {% endfor %}
-  </div>
 
   <div class="flex-parent middle form login">
     <div class="centered">
@@ -23,9 +22,6 @@ Login
         <input type="password" name="password" placeholder="Password"><br><br>
         <button type="submit" class="btn btn-outline-light"> Login </button>
         <button type="cancel" class="btn btn-outline-light"> Cancel </button>
-      </form>
-      <form action="/">
-
       </form>
     </div>
   </div>

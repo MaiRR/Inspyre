@@ -5,33 +5,36 @@ Signup
 {% endblock %}
 
   {% block content %}
+
+    {% if password_error %}
+      <div class="alert alert-danger" role="alert">
+        {{password_error}}
+      </div>
+    {% endif %}
+
+    {% set msgs = get_flashed_messages() %}
+      {% for each in msgs %}
+        <div class="alert alert-danger" role="alert">
+          {{each}}
+        </div>
+      {% endfor %}
+
     <div class="flex-parent middle form signup">
       <div class="centered">
         <form action="/signup" method = "POST">
           Enter a new username: <br>
-          <input type="text" name="username"> <br>
+          <input type="text" name="username" placeholder="Must be unique"> <br>
           <font color="red"> {{username_error}} </font>
           {% if username_error %}
             <br>
           {% endif %}
           Password: <br>
-          <input type="password" name="password"> <br>
+          <input type="password" name="password" placeholder="Must have >= 8 characters"> <br>
           Confirm password: <br>
-          <input type="password" name="confirm"> <br> <br>
+          <input type="password" name="confirm" placeholder="Must match last field"> <br> <br>
           <button type="submit" class="btn btn-outline-light"> Sign Up </button>
           <button type="cancel" class="btn btn-outline-light"> Cancel </button>
         </form>
-
-        <font color="red"> {{password_error}} </font>
-        {% if password_error %}
-        <br>
-        {% endif %}
-
-        {% set msgs = get_flashed_messages() %}
-        {% for each in msgs %}
-       <font color="red"> {{ each }} </font>
-        <br>
-        {% endfor %}
       </div>
     </div>
 
