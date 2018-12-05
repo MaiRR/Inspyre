@@ -124,6 +124,14 @@ def logout():
     return redirect('/')
 
 
+@app.route('/recommendations')
+def recommendations():
+    return render_template(
+        'recommendations.html',
+        background=util.apis.image_of_the_day(),
+    )
+
+
 if __name__ == '__main__':
     util.accounts.create_table()
     util.favorites.create_table()
