@@ -12,10 +12,12 @@ app.secret_key = util.accounts.get_salt()
 
 @app.route('/')
 def index():
+    
     if util.accounts.is_logged_in(session):
+        title,content = util.apis.poem()
         return render_template(
             'home.html',
-            background=util.apis.image_of_the_day(), name = session["user"]
+            background=util.apis.image_of_the_day(), name = session["user"], title = title, content = content,
         )
     word, definition = util.apis.definition_of_the_day()
     return render_template(

@@ -67,3 +67,10 @@ def definition_of_the_day():
         ['definitions'][0]
     return word, definition
 
+
+def poem():
+    poem = urllib.request.urlopen("https://www.poemist.com/api/v1/randompoems")
+    response = poem.read()
+    data = json.loads(response)
+    return data[0]["title"], data[0]["content"]
+    
