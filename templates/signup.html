@@ -5,7 +5,7 @@ Signup
 {% endblock %}
 
   {% block content %}
-    <div class="middle flex-parent form">
+    <div class="flex-parent middle form signup">
       <div class="centered">
         <form action="/signup" method = "POST">
           Enter a new username: <br>
@@ -18,8 +18,8 @@ Signup
           <input type="password" name="password"> <br>
           Confirm password: <br>
           <input type="password" name="confirm"> <br> <br>
-          <button type="submit"> Sign Up </button>
-          <button type="cancel"> Cancel </button>
+          <button type="submit" class="btn btn-outline-light"> Sign Up </button>
+          <button type="cancel" class="btn btn-outline-light"> Cancel </button>
         </form>
 
         <font color="red"> {{password_error}} </font>
@@ -36,4 +36,3 @@ Signup
     </div>
 
 {% endblock %}
-

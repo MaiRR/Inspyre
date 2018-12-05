@@ -20,7 +20,6 @@
 
 .middle {
   display: flex;
-  height: 200px;
   width: 500px;
   text-align: center;
   margin: auto;
@@ -43,9 +42,9 @@
 }
 
 .form {
-  /* height: 100px; */
-  /* width: 100%; */
-  /* text-align: center; */
+  /* height: auto;
+  width: 600px;
+  text-align: center; */
 
   background: rgb(34,34,34); /* for IE */
   background: rgba(34,34,34,0.75);
@@ -53,7 +52,7 @@
 }
 
 .flex-parent {
-  width: 100%;
+  /*width: 100%; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -88,4 +87,12 @@
 
 .content {
   display: flex;
+}
+
+.signup {
+  height: 350px;
+}
+
+.login {
+  height: 200px;
 }
