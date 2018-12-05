@@ -15,7 +15,7 @@ def index():
     if util.accounts.is_logged_in(session):
         return render_template(
             'home.html',
-            background=util.apis.image_of_the_day(),
+            background=util.apis.image_of_the_day(), name = session["user"]
         )
     word, definition = util.apis.definition_of_the_day()
     return render_template(
