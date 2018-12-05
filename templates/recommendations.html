@@ -8,18 +8,42 @@ Recommendations
 
 {% block content %}
 
-  <div class="navbar">
-  </div>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Inspyre</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="recommendations">Recommendations</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#">Favorites</a>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0" action="/logout">
+        <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Logout</button>
+      </form>
+    </div>
+  </nav>
 
   <div class="content">
     <div class="books">
-      {{books}}
+      Books: <br>
+      {{books}} <br>
     </div>
     <div class="movies">
-      {{movies}}
+      Movies: <br>
+      {{movies}} <br>
     </div>
     <div class="music">
-      {{music}}
+      Music: <br>
+      {{music}} <br>
     </div>
   </div>
 
