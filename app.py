@@ -126,9 +126,10 @@ def logout():
 
 @app.route('/recommendations')
 def recommendations():
+    d = util.apis.recommendations()
     return render_template(
         'recommendations.html',
-        background=util.apis.image_of_the_day(),
+        background=util.apis.image_of_the_day(), d=util.apis.recommendations(), 
     )
 
 

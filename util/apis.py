@@ -1,9 +1,15 @@
 import urllib
-import urllib.request
+import urllib.request as urlrequest
+from urllib.request import urlopen
 import urllib.parse
 import json
 import random
 import time
+
+
+import urllib.request as urlrequest
+from urllib.request import urlopen
+
 
 import util.config
 
@@ -73,4 +79,11 @@ def poem():
     response = poem.read()
     data = json.loads(response)
     return data[0]["title"], data[0]["content"]
-    
+
+
+def recommendations():
+    key = '325077-Inspyre-THCC3LLO'
+    req = urlrequest.Request('https://tastedive.com/api/similar?q=titanic&info=1&k=' + key, headers={'User-Agent': 'Mozilla/5.0'})
+    r = urlopen(req).read()
+    d = json.loads(r.decode('utf-8'))
+    return d['Similar']['Info'][0]['Name'] + ':' + d['Similar']['Info'][0]['wTeaser']
