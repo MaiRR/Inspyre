@@ -65,7 +65,7 @@ def definition_of_the_day():
         ['entries'][0] \
         ['senses'][0] \
         ['definitions'][0]
-    return word, definition
+    return word.title(), definition[0].upper() + definition[1:]
 
 
 def poem():

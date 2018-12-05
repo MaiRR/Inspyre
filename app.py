@@ -1,10 +1,8 @@
 from flask import Flask, request, render_template, session, redirect, flash
-import util.accounts
-#  import util.posts
-import util.sessions
-#  import util.search
-import base64
 
+import util.accounts
+import util.sessions
+import util.favorites
 import util.apis
 
 app = Flask(__name__)
@@ -12,12 +10,14 @@ app.secret_key = util.accounts.get_salt()
 
 @app.route('/')
 def index():
-    
     if util.accounts.is_logged_in(session):
         title,content = util.apis.poem()
         return render_template(
             'home.html',
-            background=util.apis.image_of_the_day(), name = session["user"], title = title, content = content,
+            background=util.apis.image_of_the_day(),
+            name=session["user"],
+            title=title,
+            content=content,
         )
     word, definition = util.apis.definition_of_the_day()
     return render_template(
@@ -52,7 +52,10 @@ def login():
         return redirect(ret_path)
     else:
         flash('Bad username or password')
-        return render_template('login.html')
+        return render_template(
+            'login.html',
+            background=util.apis.image_of_the_day(),
+        )
 
 
 @app.route('/signup', methods=['GET', 'POST'])
@@ -73,10 +76,16 @@ def signup():
 
     if util.accounts.user_exists(username):
         flash('Username already taken')
-        return render_template('signup.html')
+        return render_template(
+            'signup.html',
+            background=util.apis.image_of_the_day(),
+        )
     elif password != confirm:
         flash('Passwords do not match')
-        return render_template('signup.html')
+        return render_template(
+            'signup.html',
+            background=util.apis.image_of_the_day(),
+        )
     else:
         if util.accounts.valid_password(password):
             password_error = ''
@@ -96,6 +105,7 @@ def signup():
         if not account_created:  # Account not created properly
             return render_template(
                 'signup.html',
+                background=util.apis.image_of_the_day(),
                 password_error=password_error,
                 username_error=username_error
             )
@@ -115,7 +125,8 @@ def logout():
 
 
 if __name__ == '__main__':
-    #  util.posts.create_table()
     util.accounts.create_table()
+    util.favorites.create_table()
     app.debug = True  # Set to `False` before release
     app.run()
+
