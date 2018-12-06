@@ -4,10 +4,6 @@ import util.accounts
 import util.sessions
 import util.favorites
 import util.apis
-import urllib
-import urllib.request as urlrequest
-from urllib.request import urlopen
-import urllib.parse
 
 app = Flask(__name__)
 app.secret_key = util.accounts.get_salt()
@@ -128,13 +124,11 @@ def logout():
     return redirect('/')
 
 
-
-
 @app.route('/recommendations')
 def recommendations():
     return render_template(
         'recommendations.html',
-        background=util.apis.image_of_the_day(), 
+        background=util.apis.image_of_the_day(),
     )
 
 

@@ -41,21 +41,19 @@ Home Page
           <a class="nav-link disabled" href="#">Favorites</a>
         </li>
       </ul>
+      <div style="color: white;">Welcome, {{name}}!</div>
+      &nbsp; &nbsp;
       <form class="form-inline my-2 my-lg-0" action="/logout">
         <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Logout</button>
       </form>
     </div>
   </nav>
 
-<!--
 
   <div class="grid">
     <div class="row" style="padding: 15px;">
-      <div class="col-lg-4 divide"></div>
-      <div class="col-lg-4 content">
-        <h1>Welcome, {{name}}!</h1>
-      </div>
-      <div class="col-lg-4 divide"></div>
+      <!-- <div class="col-lg-4 divide"></div> -->
+      <!-- <div class="col-lg-4 divide"></div> -->
     </div>
     <div class="row" style="padding: 15px;">
       <div class="col-lg-4 divide"></div>
@@ -65,30 +63,27 @@ Home Page
         </form>
       </div>
       <div class="col-lg-4 divide"></div>
-    </div>
-	<br>
-	<div class ="cover">
+    </div> <br>
     <div id="poem">
-	  <h3> Poem </h3>
-      {{title}} <br>
-	  {{content}}
+      <div>
+        <h3>{{title}}</h3>
+        <div>
+          {{content}}
+        </div>
+      </div> </div>
     </div>
-</div>
-  </div>
 
--->
+  <!-- <div> -->
+    <!-- <div class="flex-parent"> -->
 
-  <div>
-    <div class="flex-parent">
+      <!-- <div class="centered"> -->
+        <!-- <h1 class="display-4">Welcome, {{name}}!</h1> -->
+      <!-- </div> -->
 
-      <div class="centered">
-        <h1 class="display-4">Welcome, {{name}}!</h1>
-      </div>
-
-      <div class="middle homeContent form">
-        {{title}} <br><br>
-  	    {{content}}
-      </div>
+      <!-- <div class="middle homeContent form"> -->
+        <!-- {{title}} <br><br> -->
+          <!-- {{content}} -->
+      <!-- </div> -->
 
 <!--
       <div class="goal">
@@ -102,7 +97,7 @@ Home Page
         {% endif %}
       </div>
 -->
-    </div>
-  </div>
+    <!-- </div> -->
+  <!-- </div> -->
 
 {% endblock %}
