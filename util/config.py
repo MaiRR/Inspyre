@@ -42,3 +42,8 @@ def get_oxford_api_keys():
         result = json.load(f)
     return random.choice(result['oxford_api']['keys'])
 
+
+def get_taste_api_keys():
+    with open(APIS_FILE) as f:
+        result = json.load(f)
+    return result['taste_api']
