@@ -125,18 +125,22 @@ nav {
   justify-content: center;
 
   margin: auto;
-  position: absolute;
-  padding-left: 10px;
-  padding-right: 10px;
-  top: 0;
+  /*position: absolute;*/
+  padding-left: 30px;
+  padding-right: 30px;
+  /*top: 0;
   bottom: 0;
   left: 0;
-  right: 0;
+  right: 0;*/
   flex-wrap: wrap;
 
   background: rgb(34,34,34); /* for IE */
   background: rgba(34,34,34,0.75);
   color: white;
+}
+
+.container-fluid {
+  padding-top: 30px;
 }
 
 /* #poem { */
@@ -151,4 +155,3 @@ nav {
   /* right: 0; */
   /* flex-wrap: wrap; */
 /* } */
-
