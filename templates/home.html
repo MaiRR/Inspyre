@@ -93,7 +93,7 @@ Home Page
 <!--
       <div class="goal">
         <h1 class="display-5"> Goal of the Day: </h1>
-        {% if goal in data.db %}
+        {% if goal %}
           {{ goal }}
         {% else %}
           <form action="/updateGoal" method="POST">
