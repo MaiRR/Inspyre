@@ -70,8 +70,8 @@ def definition_of_the_day():
 
 def poem():
     url = 'https://www.poemist.com/api/v1/randompoems'
-    poem = ''
-    while len(poem) == 0 or len(poem) > 3000:
+    poem = None
+    while poem is None or len(poem) > 3000:
         with urllib.request.urlopen(url) as f:
             result = json.loads(f.read())
         poem = result[0]['content']
@@ -86,3 +86,4 @@ def recommendations(title):
     response = urllib.request.urlopen(rec)
     d = json.loads(response)
     return d["Similar"]["Results"]
+
