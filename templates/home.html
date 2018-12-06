@@ -1,5 +1,20 @@
 <!-- template for home page -->
 
+<!--
+TO DO
+* affix navbar to the top of the page
+  * position: static DOES NOT WORK
+  * position: sticky DOES NOT WORK
+* get the background to be static while scrolling
+  * background-attachment: fixed DOES NOT WORK
+  * background-repeat: no repeat DOES NOT WORK
+  * position: static DOES NOT WORK
+  * TRY overflow-y: scroll !important;
+  * TRY backface-visibility: hidden;
+* get the footer to stay at the bottom
+* get the poem background to grow height with the contents
+-->
+
 {% extends "base.html" %}
 
 {% block title %}
@@ -32,6 +47,8 @@ Home Page
     </div>
   </nav>
 
+<!--
+
   <div class="grid">
     <div class="row" style="padding: 15px;">
       <div class="col-lg-4 divide"></div>
@@ -43,7 +60,6 @@ Home Page
     <div class="row" style="padding: 15px;">
       <div class="col-lg-4 divide"></div>
       <div class="col-lg-4 content">
-        <!-- Figure out how to display only if no goal in database -->
         <form action="/updateGoal" method="POST">
           <input type="text" name="goal" placeholder="Goal of the Day">
         </form>
@@ -59,32 +75,34 @@ Home Page
     </div>
 </div>
   </div>
-  
-
-<!--
-
-  <div class="flex-parent">
-    <div class="centered">
-      <h1>Welcome, {{name}}!</h1>
-    </div>
-
-    <div id="poem">
-      {{poem}}
-    </div>
-
-    <div class="buttons">
-      <a class="btn btn-primary" href="favorites" role="button">Favorites</a>
-      <a class="btn btn-primary" href="recommendations" role="button">Recommendations</a>
-    </div>
-
-
-    <div class="goal">
-      <form action="/updateGoal" method="POST">
-        <input type="text" name="goal" placeholder="Goal of the Day">
-      </form>
-    </div>
-  </div>
 
 -->
+
+  <div>
+    <div class="flex-parent">
+
+      <div class="centered">
+        <h1 class="display-4">Welcome, {{name}}!</h1>
+      </div>
+
+      <div class="middle homeContent form">
+        {{title}} <br><br>
+  	    {{content}}
+      </div>
+
+<!--
+      <div class="goal">
+        <h1 class="display-5"> Goal of the Day: </h1>
+        {% if goal in data.db %}
+          {{ goal }}
+        {% else %}
+          <form action="/updateGoal" method="POST">
+            <input type="text" name="goal" placeholder="Goal of the Day">
+          </form>
+        {% endif %}
+      </div>
+-->
+    </div>
+  </div>
 
 {% endblock %}

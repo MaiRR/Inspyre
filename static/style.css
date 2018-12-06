@@ -1,3 +1,9 @@
+body background {
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  width: 100%;
+}
+
 .footer {
   display: flex;
   justify-content: center;
@@ -12,6 +18,13 @@
   background: rgb(34,34,34); /* for IE */
   background: rgba(34,34,34,0.75);
   color: white;
+}
+
+nav {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
 }
 
 .btn {
@@ -70,18 +83,10 @@
   margin: 10px;
 }
 
-.navbar-brand{
-  color: white;
-}
-
 .row {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.content {
-  display: flex;
 }
 
 .signup {
@@ -96,4 +101,19 @@
   width: 500px;
   margin: 30px auto 0px auto;
   text-align: center;
+}
+
+.landingContent {
+  width: 500px;
+}
+
+.homeContent {
+  padding: 15px;
+  width: 600px;
+  height: auto;
+}
+
+#w {
+  width: 500px;
+  margin: 0 auto;
 }
