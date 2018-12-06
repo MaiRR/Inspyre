@@ -7,10 +7,6 @@ import random
 import time
 
 
-import urllib.request as urlrequest
-from urllib.request import urlopen
-
-
 import util.config
 
 def image_of_the_day():
@@ -82,8 +78,8 @@ def poem():
 
 
 def recommendations():
-    key = '325077-Inspyre-THCC3LLO'
-    req = urlrequest.Request('https://tastedive.com/api/similar?q=titanic&info=1&k=' + key, headers={'User-Agent': 'Mozilla/5.0'})
-    r = urlopen(req).read()
-    d = json.loads(r.decode('utf-8'))
-    return d['Similar']['Info'][0]['Name'] + ':' + d['Similar']['Info'][0]['wTeaser']
+    key = util.config.get_taste_api_key()
+    req = urlrequest.Request('https://tastedive.com/api/similar?q=Titanic/info=1k=key')
+    r = urlrequest.urlopen(req)
+    d = json.loads(r)
+    return d["Similar"]["Results"]
