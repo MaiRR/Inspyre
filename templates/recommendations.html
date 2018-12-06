@@ -33,17 +33,32 @@ Recommendations
   </nav>
   <div class="content">
     <div class="books"> 
+      <form action="/books" method="GET">
+		  Input book title:
+        <input type="text" name="book"><br>
+        <button type="submit" class="btn btn-outline-light"> Get Reccomendations </button>
+	</form>
  
       Books: <br>
       {{books}} <br>
   </div>
     </div> 
     <div class="movies">
+      <form action="/movies" method="GET">
+		  Input movie title:
+        <input type="text" name="movie"><br>
+        <button type="submit" class="btn btn-outline-light"> Get Reccomendations </button>
+	</form>
       Movies: 
       {{d}} <br>
   </div>
     </div> <br>
     <div class="music"> 
+      <form action="/music" method="GET">
+		  Input song title:
+        <input type="text" name="song"><br>
+        <button type="submit" class="btn btn-outline-light"> Get Reccomendations </button>
+	</form>
       Music: <br>
       {{music}} <br>
     </div>
