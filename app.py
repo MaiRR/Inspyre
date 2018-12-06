@@ -131,7 +131,12 @@ def recommendations():
         background=util.apis.image_of_the_day(),
     )
 
-
+@app.route('/books', methods=['GET', 'POST'])
+def books():
+    books = request.args["book"]
+    a = util.apis.recommendations(books)
+    return render_template("books.html", books = a)
+    
 if __name__ == '__main__':
     util.accounts.create_table()
     util.favorites.create_table()

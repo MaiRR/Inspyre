@@ -1,6 +1,4 @@
 import urllib
-import urllib.request as urlrequest
-from urllib.request import urlopen
 import urllib.parse
 import json
 import random
@@ -81,9 +79,10 @@ def poem():
     return title, poem
 
 
-def recommendations():
+def recommendations(title):
     key = util.config.get_taste_api_key()
-    req = urlrequest.Request('https://tastedive.com/api/similar?q=Titanic/info=1k=key')
-    r = urlrequest.urlopen(req)
-    d = json.loads(r)
+    url = 'https://tastedive.com/api/similar?q=' + title + '&info=1&k=' + key
+    rec = urllib.request.Request(url)
+    response = urllib.request.urlopen(rec)
+    d = json.loads(response)
     return d["Similar"]["Results"]
