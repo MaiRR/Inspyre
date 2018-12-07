@@ -10,7 +10,7 @@ body background {
   /* width: 100%; */
   text-align: center;
   margin: auto;
-  position: absolute;
+  position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
@@ -83,11 +83,11 @@ nav {
   margin: 10px;
 }
 
-.row {
+/*.row {
   display: flex;
   align-items: center;
   justify-content: center;
-}
+}*/
 
 .signup {
   height: 350px;
@@ -140,7 +140,7 @@ nav {
 }
 
 .container-fluid {
-  padding-top: 30px;
+  padding-top: 10px;
 }
 
 /* #poem { */

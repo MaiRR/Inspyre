@@ -87,12 +87,19 @@ Home Page
       </div>
     </div>
   </div>
-  <div class="container-fluid centered">
-      <h1 class="display-5"> Goal of the Day: </h1> {{ goal }}
-      <form action="/updateGoal" method="GET">
-        <input type="text" name="goal" placeholder="Goal of the Day">
-        <button type="submit" class="btn btn-outline-light"> Create </button>
-      </form>
+
+  <div class="container-fluid grid">
+    <div class="row" style="margin-left: 200px; margin-right: 200px;">
+      <div class="col-lg-8">
+        <h4 class="display-5"> Current Goal: {{ goal }} </h4>
+      </div>
+      <div class="col-lg-4" style="float: right;">
+        <form action="/updateGoal" method="GET">
+          <input type="text" name="goal" placeholder="What is your main focus?">
+          <button type="submit" class="btn btn-outline-dark"> Update </button>
+        </form>
+      </div>
+    </div>
   </div>
 
   <!-- <div> -->
