@@ -140,3 +140,31 @@ def remove_user(username):
     )
     util.config.end_db(db)
 
+
+def updateGoal(new, username):
+    """Updates goal of the day"""
+    db, c = util.config.start_db()
+    c.execute(
+        "UPDATE users SET goal =\"{}\" WHERE username =\"{}\"".format(new, username)
+    )
+    util.config.end_db(db)
+
+def getGoal(username):
+    """Accessor for goal"""
+    db, c = util.config.start_db()
+    c.execute(
+        'SELECT goal FROM users WHERE username=?',
+        (username,)
+    )
+    result = c.fetchone()
+    util.config.end_db(db)
+    return result
+
+def rmGoal(username):
+    """Removes old goal of the day"""
+    db, c = util.config.start_db()
+    c.execute(
+        'UPDATE users SET goal = "" WHERE username=?',
+        (username,)
+    )
+    util.config.end_db(db)

@@ -88,8 +88,10 @@ Home Page
     </div>
   </div>
   <div class="container-fluid centered">
+      <h1 class="display-5"> Goal of the Day: </h1> {{ goal }}
       <form action="/updateGoal" method="POST">
         <input type="text" name="goal" placeholder="Goal of the Day">
+        <button type="submit" class="btn btn-outline-light"> Create </button>
       </form>
   </div>
 

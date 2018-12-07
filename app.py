@@ -12,12 +12,15 @@ app.secret_key = util.accounts.get_salt()
 def index():
     if util.accounts.is_logged_in(session):
         title,content = util.apis.poem()
+        #if util.accounts.getGoal(util.accounts.get_logged_in_user(session)) != '':
+        display = util.accounts.getGoal(util.accounts.get_logged_in_user(session))
         return render_template(
             'home.html',
             background=util.apis.image_of_the_day(),
             name=session["user"],
             title=title,
             content=content,
+            goal=display,
         )
     word, definition = util.apis.definition_of_the_day()
     return render_template(
@@ -121,6 +124,7 @@ def signup():
 def logout():
     util.sessions.clear_ret_path(session)
     util.accounts.logout_user(session)
+    util.accounts.rmGoal(session["user"])
     return redirect('/')
 
 
@@ -136,10 +140,18 @@ def books():
     books = request.args["book"]
     a = util.apis.recommendations(books)
     return render_template("books.html", books = a)
-    
+
+@app.route('/updateGoal', methods=['GET', 'POST'])
+def update():
+    if request.method == 'POST':
+        newGoal = request.args["goal"]
+        util.accounts.updateGoal(newGoal, util.accounts.get_logged_in_user(session))
+        return redirect('/')
+    else:
+        return redirect('/')
+
 if __name__ == '__main__':
     util.accounts.create_table()
     util.favorites.create_table()
     app.debug = True  # Set to `False` before release
     app.run()
-
