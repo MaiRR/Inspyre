@@ -158,7 +158,7 @@ def getGoal(username):
     )
     result = c.fetchone()
     util.config.end_db(db)
-    return result
+    return result[0]
 
 def rmGoal(username):
     """Removes old goal of the day"""

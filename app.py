@@ -13,8 +13,7 @@ def index():
     if util.accounts.is_logged_in(session):
         title,content = util.apis.poem()
         display = util.accounts.getGoal(util.accounts.get_logged_in_user(session))
-        if display == "('',)":
-            display = ''
+        print(display)
         return render_template(
             'home.html',
             background=util.apis.image_of_the_day(),
@@ -123,9 +122,9 @@ def signup():
 
 @app.route('/logout')
 def logout():
+    util.accounts.rmGoal(session["user"])
     util.sessions.clear_ret_path(session)
     util.accounts.logout_user(session)
-    util.accounts.rmGoal(session["user"])
     return redirect('/')
 
 
