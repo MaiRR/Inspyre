@@ -1,4 +1,5 @@
 import urllib
+import urllib.request
 import urllib.parse
 import json
 import random
@@ -81,9 +82,35 @@ def poem():
 
 def recommendations(title):
     key = util.config.get_taste_api_key()
-    url = 'https://tastedive.com/api/similar?q=' + title + '&info=1&k=' + key
-    rec = urllib.request.Request(url)
-    response = urllib.request.urlopen(rec)
-    d = json.loads(response)
-    return d["Similar"]["Results"]
+    headers = {'User-Agent': 'Mozilla/5.0'}
+    url = 'https://tastedive.com/api/similar?q={title}&info=1&k={key}'.format(
+        title=urllib.parse.quote(title),
+        key=key,
+    )
+    r = urllib.request.Request(url, headers=headers)
+    with urllib.request.urlopen(r) as f:
+        result = json.load(f)
+    results = result['Similar']['Results']
+    print(results, 'WOW')
+    return results
+
+
+def rec_book(title):
+    results = util.apis.recommendations(title)
+    for i in results: print(i['Type'])
+    book_results = [i for i in results if i['Type'] == 'book']
+    print(book_results, '\n_______')
+    return book_results[0] if book_results else None
+
+
+def rec_movie(title):
+    results = util.apis.recommendations(title)
+    movie_results = [i for i in results if i['Type'] == 'movie']
+    return movie_results[0] if movie_results else None
+
+
+def rec_song(title):
+    results = util.apis.recommendations(title)
+    song_results = [i for i in results if i['Type'] == 'song']
+    return song_results[0] if song_results else None
 
