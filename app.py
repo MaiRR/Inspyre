@@ -140,7 +140,7 @@ def recommendations():
 def books():
     books = util.apis.rec_book(request.args['book'])
     return render_template(
-        'recommendations.html',
+        'books.html',
         background=util.apis.image_of_the_day(),
         books=books,
     )
@@ -151,7 +151,7 @@ def books():
 def movies():
     movies = util.apis.rec_movie(request.args['movie'])
     return render_template(
-        'recommendations.html',
+        'movies.html',
         background=util.apis.image_of_the_day(),
         movies=movies,
     )
@@ -162,7 +162,7 @@ def movies():
 def songs():
     songs = util.apis.rec_song(request.args['song'])
     return render_template(
-        'recommendations.html',
+        'music.html',
         background=util.apis.image_of_the_day(),
         songs=songs,
     )
