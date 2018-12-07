@@ -90,13 +90,13 @@ Home Page
 
 
   <div class="container-fluid centered">
-    <div class="child" style="margin-left: 200px; margin-right: 200px;">
+    <div class="form child" style="margin-left: 200px; margin-right: 200px; padding: 15px;">
       {% if goal != '' %}
         <h4 class="display-5"> Current Goal: {{ goal }} </h4>
       {% else %}
         <form action="/updateGoal" method="GET">
           <input type="text" name="goal" placeholder="What is your main focus?">
-          <button type="submit" class="btn btn-outline-dark"> Update </button>
+          <button type="submit" class="btn btn-outline-light"> Update </button>
         </form>
       {% endif %}
     </div>
