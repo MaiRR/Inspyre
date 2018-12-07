@@ -37,10 +37,10 @@ def get_favorites(username):
             (username,)
         )
         results = c.fetchall()
-    except sqlite3.OperationalError:
-        pass
+        favorites = [i[1].split('-----') for i in results]
+        favorites.reverse()
+    except:
+        favorites = []
     util.config.end_db(db)
-    favorites = [i[1].split('-----') for i in results]
-    favorites.reverse()
     return favorites
 
