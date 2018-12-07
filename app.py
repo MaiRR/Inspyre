@@ -122,7 +122,7 @@ def signup():
 
 @app.route('/logout')
 def logout():
-    util.accounts.rmGoal(session["user"])
+    util.accounts.rmGoal(util.accounts.get_logged_in_user(session))
     util.sessions.clear_ret_path(session)
     util.accounts.logout_user(session)
     return redirect('/')
@@ -184,4 +184,3 @@ if __name__ == '__main__':
     util.favorites.create_table()
     app.debug = True  # Set to `False` before release
     app.run()
-
