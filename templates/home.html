@@ -88,19 +88,40 @@ Home Page
     </div>
   </div>
 
+
+  <div class="container-fluid centered">
+    <div class="child" style="margin-left: 200px; margin-right: 200px;">
+      {% if goal != '' %}
+        <h4 class="display-5"> Current Goal: {{ goal }} </h4>
+      {% else %}
+        <form action="/updateGoal" method="GET">
+          <input type="text" name="goal" placeholder="What is your main focus?">
+          <button type="submit" class="btn btn-outline-dark"> Update </button>
+        </form>
+      {% endif %}
+    </div>
+  </div>
+
+<!-- WORKING WOKRING WORKING
   <div class="container-fluid grid">
     <div class="row" style="margin-left: 200px; margin-right: 200px;">
+      {% if goal != '' %}
       <div class="col-lg-8">
-        <h4 class="display-5"> Current Goal: {{ goal }} </h4>
+        <h4 class="display-5"> Current Goal:
+            {{ goal }}
+        </h4>
       </div>
+      {% else %}
       <div class="col-lg-4" style="float: right;">
         <form action="/updateGoal" method="GET">
           <input type="text" name="goal" placeholder="What is your main focus?">
           <button type="submit" class="btn btn-outline-dark"> Update </button>
         </form>
       </div>
+      {% endif %}
     </div>
   </div>
+-->
 
   <!-- <div> -->
     <!-- <div class="flex-parent"> -->
