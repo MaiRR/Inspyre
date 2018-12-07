@@ -12,8 +12,9 @@ app.secret_key = util.accounts.get_salt()
 def index():
     if util.accounts.is_logged_in(session):
         title,content = util.apis.poem()
-        #if util.accounts.getGoal(util.accounts.get_logged_in_user(session)) != '':
         display = util.accounts.getGoal(util.accounts.get_logged_in_user(session))
+        if display == "('',)":
+            display = ''
         return render_template(
             'home.html',
             background=util.apis.image_of_the_day(),
@@ -143,12 +144,13 @@ def books():
 
 @app.route('/updateGoal', methods=['GET', 'POST'])
 def update():
-    if request.method == 'POST':
+    if request.method == 'GET':
         newGoal = request.args["goal"]
         util.accounts.updateGoal(newGoal, util.accounts.get_logged_in_user(session))
         return redirect('/')
     else:
         return redirect('/')
+
 
 if __name__ == '__main__':
     util.accounts.create_table()
