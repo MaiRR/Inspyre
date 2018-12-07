@@ -72,7 +72,7 @@ def definition_of_the_day():
 def poem():
     url = 'https://www.poemist.com/api/v1/randompoems'
     poem = None
-    while poem is None or len(poem) > 3000:
+    while poem is None or len(poem) > 2500:
         with urllib.request.urlopen(url) as f:
             result = json.loads(f.read())
         poem = result[0]['content']
@@ -111,6 +111,7 @@ def rec_movie(title):
 
 def rec_song(title):
     results = util.apis.recommendations(title)
-    song_results = [i for i in results if i['Type'] == 'song']
+    #  print(results)
+    song_results = [i for i in results if i['Type'] == 'music']
     return song_results[0] if song_results else None
 

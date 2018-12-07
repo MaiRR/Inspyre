@@ -140,7 +140,7 @@ def recommendations():
 def books():
     books = util.apis.rec_book(request.args['book'])
     return render_template(
-        'books.html',
+        'recommendations.html',
         background=util.apis.image_of_the_day(),
         books=books,
     )
@@ -151,7 +151,7 @@ def books():
 def movies():
     movies = util.apis.rec_movie(request.args['movie'])
     return render_template(
-        'movies.html',
+        'recommendations.html',
         background=util.apis.image_of_the_day(),
         movies=movies,
     )
@@ -162,7 +162,7 @@ def movies():
 def songs():
     songs = util.apis.rec_song(request.args['song'])
     return render_template(
-        'music.html',
+        'recommendations.html',
         background=util.apis.image_of_the_day(),
         songs=songs,
     )
@@ -179,8 +179,32 @@ def update():
         return redirect('/')
 
 
+@app.route('/favorite', methods=['POST'])
+def favorite():
+    if 'data' not in request.form:
+        return redirect('/')
+    data = request.form['data']
+    user = util.accounts.get_logged_in_user(session)
+    util.favorites.add_favorite(user, data)
+    print(data)
+    return redirect('/favorites')
+
+
+@app.route('/favorites')
+def favorites():
+    user = util.accounts.get_logged_in_user(session)
+    if user is None:
+        return redirect('/')
+    return render_template(
+        'favorites.html',
+        background=util.apis.image_of_the_day(),
+        favorites=util.favorites.get_favorites(user)
+    )
+
+
 if __name__ == '__main__':
     util.accounts.create_table()
     util.favorites.create_table()
     app.debug = True  # Set to `False` before release
     app.run()
+

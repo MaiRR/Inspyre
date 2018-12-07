@@ -9,14 +9,45 @@ Favorites
 
 {% block content %}
 
-  <div class="navbar">
-  </div>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="/">Inspyre</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/recommendations">Recommendations</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/favorites">Favorites</a>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0" action="/logout">
+        <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Logout</button>
+      </form>
+    </div>
+  </nav>
 
   <div class="content">
-    <!--for loop-->
-    <div class="fav">
-
-    </div>
+    {% for favorite in favorites %}
+      <div class="fav">
+        {% if favorite[0] == 'poem' %}
+          <div class="container-fluid centered">
+            <div id="poem">
+              <h3 class="display-5">{{favorite[1]}}</h3>
+              <div>
+                {{favorite[2]}}
+              </div>
+            </div>
+          </div>
+        {% endif %}
+      </div>
+    {% endfor %}
   </div>
 
 {% endblock %}

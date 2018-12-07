@@ -149,6 +149,7 @@ def updateGoal(new, username):
     )
     util.config.end_db(db)
 
+
 def getGoal(username):
     """Accessor for goal"""
     db, c = util.config.start_db()
@@ -160,6 +161,7 @@ def getGoal(username):
     util.config.end_db(db)
     return result[0]
 
+
 def rmGoal(username):
     """Removes old goal of the day"""
     db, c = util.config.start_db()
@@ -168,3 +170,4 @@ def rmGoal(username):
         (username,)
     )
     util.config.end_db(db)
+

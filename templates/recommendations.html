@@ -20,10 +20,10 @@ Recommendations
           <a class="nav-link" href="/">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="recommendations">Recommendations</a>
+          <a class="nav-link" href="/recommendations">Recommendations</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link disabled" href="#">Favorites</a>
+          <a class="nav-link" href="/">Favorites</a>
         </li>
       </ul>
       <form class="form-inline my-2 my-lg-0" action="/logout">
@@ -32,29 +32,45 @@ Recommendations
     </div>
   </nav>
   <div class="content">
-    <div class="books"> 
+    <div class="books">
       <form action="/books" method="GET">
-		  Input book title:
-        <input type="text" name="book"><br>
+        <input type="text" name="book" placeholder="Input book title"><br>
         <button type="submit" class="btn btn-outline-light"> Get Reccomendations </button>
 	</form>
+      {% if books %}
+ 	<div class ="rec">
+      {{books['Name']}} <br>
+      {{books['wTeaser']}} <br>
   </div>
-    </div> 
-    <div class="movies">
+  {% endif %}
+
+  </div>
+    </div>
+    <div class="movies"><br>
       <form action="/movies" method="GET">
-		  Input movie title:
-        <input type="text" name="movie"><br>
+        <input type="text" name="movie" placeholder="Input movie title"><br>
         <button type="submit" class="btn btn-outline-light"> Get Reccomendations </button>
 	</form>
+  {% if movies %}
+    <div class="rec">
+      {{movies['Name']}} <br>
+      {{movies['wTeaser']}} <br>
+    </div>
+  {% endif %}
 
   </div>
     </div> <br>
-	<div class="music"> 
+	<div class="music">
 		<form action="/music" method="GET">
-		  Input song title:
-          <input type="text" name="song"><br>
+          <input type="text" name="song" placeholder="Input band name"><br>
           <button type="submit" class="btn btn-outline-light"> Get Reccomendations </button>
-		 </form> 
+		 </form>
+                 {% if songs %}
+     <div class="rec">
+        {{songs['Name']}} <br>
+        {{songs['wTeaser']}} <br>
+    </div>
+    {% endif %}
     </div>
   </div>
 

@@ -24,7 +24,7 @@ Home Page
 {% block content %}
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">Inspyre</a>
+    <a class="navbar-brand" href="/">Inspyre</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -35,10 +35,10 @@ Home Page
           <a class="nav-link" href="/">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="recommendations">Recommendations</a>
+          <a class="nav-link" href="/recommendations">Recommendations</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link disabled" href="#">Favorites</a>
+          <a class="nav-link" href="/favorites">Favorites</a>
         </li>
       </ul>
       <div style="color: white;">Welcome, {{name}}!</div>
@@ -84,6 +84,16 @@ Home Page
       <h3 class="display-5">{{title}}</h3>
       <div>
         {{content}}
+        <form action="/favorite" method="post" accept-charset="utf-8">
+          <input
+            type="hidden"
+            name="data"
+            id="data"
+            value="poem-----{{title}}-----{{content}}">
+          <button type="submit" class="btn btn-outline-light">
+            Favorite
+          </button>
+        </form>
       </div>
     </div>
   </div>

@@ -143,15 +143,13 @@ nav {
   padding-top: 30px;
 }
 
-/* #poem { */
-  /* display: flex; */
-  /* width: 75%; */
-  /* text-align: center; */
-  /* margin: auto; */
-  /* position: absolute; */
-  /* top: 0; */
-  /* bottom: 0; */
-  /* left: 0; */
-  /* right: 0; */
-  /* flex-wrap: wrap; */
-/* } */
+.rec {
+  height: 300px;
+  width: 100%;
+  text-align: center;
+
+  background: rgb(34,34,34); /* for IE */
+  background: rgba(34,34,34,0.75);
+  color: white;
+}
+
