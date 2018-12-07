@@ -38,9 +38,10 @@ Recommendations
         <input type="text" name="book"><br>
         <button type="submit" class="btn btn-outline-light"> Get Reccomendations </button>
 	</form>
- 
+ 	<div class ="cover">
       Books: <br>
       {{books}} <br>
+  </div>
   </div>
     </div> 
     <div class="movies">
@@ -49,20 +50,25 @@ Recommendations
         <input type="text" name="movie"><br>
         <button type="submit" class="btn btn-outline-light"> Get Reccomendations </button>
 	</form>
+	<div class="cover">
       Movies: 
       {{d}} <br>
+  </div> 
   </div>
     </div> <br>
-    <div class="music"> 
-      <form action="/music" method="GET">
+	<div class="music"> 
+		<form action="/music" method="GET">
 		  Input song title:
-        <input type="text" name="song"><br>
-        <button type="submit" class="btn btn-outline-light"> Get Reccomendations </button>
-	</form>
-      Music: <br>
-      {{music}} <br>
+          <input type="text" name="song"><br>
+          <button type="submit" class="btn btn-outline-light"> Get Reccomendations </button>
+		 </form> 
+		 <div class="cover">
+      	Music: <br>
+      {	{music}} <br>
+  </div>
     </div>
   </div>
+
 
 
 {% endblock %}
