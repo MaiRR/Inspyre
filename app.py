@@ -135,11 +135,39 @@ def recommendations():
         background=util.apis.image_of_the_day(),
     )
 
+
 @app.route('/books', methods=['GET', 'POST'])
 def books():
-    books = request.args["book"]
+    books = util.apis.rec_book(request.args['book'])
+    return render_template(
+        'recommendations.html',
+        background=util.apis.image_of_the_day(),
+        books=books,
+    )
     a = util.apis.recommendations(books)
-    return render_template("books.html", books = a)
+
+
+@app.route('/movies', methods=['GET', 'POST'])
+def movies():
+    movies = util.apis.rec_movie(request.args['movie'])
+    return render_template(
+        'recommendations.html',
+        background=util.apis.image_of_the_day(),
+        movies=movies,
+    )
+    a = util.apis.recommendations(movies)
+
+
+@app.route('/music', methods=['GET', 'POST'])
+def songs():
+    songs = util.apis.rec_song(request.args['song'])
+    return render_template(
+        'recommendations.html',
+        background=util.apis.image_of_the_day(),
+        songs=songs,
+    )
+    a = util.apis.recommendations(songs)
+
 
 @app.route('/updateGoal', methods=['GET', 'POST'])
 def update():
@@ -156,3 +184,4 @@ if __name__ == '__main__':
     util.favorites.create_table()
     app.debug = True  # Set to `False` before release
     app.run()
+

@@ -38,10 +38,14 @@ Recommendations
         <input type="text" name="book"><br>
         <button type="submit" class="btn btn-outline-light"> Get Reccomendations </button>
 	</form>
+      {% if books %}
  	<div class ="cover">
       Books: <br>
-      {{books}} <br>
+      {{books['Name']}} <br>
+      {{books['wTeaser']}} <br>
   </div>
+  {% endif %}
+
   </div>
     </div> 
     <div class="movies">
@@ -50,10 +54,14 @@ Recommendations
         <input type="text" name="movie"><br>
         <button type="submit" class="btn btn-outline-light"> Get Reccomendations </button>
 	</form>
+                 {% if movies %}
 	<div class="cover">
       Movies: 
-      {{movies}} <br>
+      {{movies['Name']}} <br>
+      {{movies['wTeaser']}} <br>
   </div> 
+  {% endif %}
+
   </div>
     </div> <br>
 	<div class="music"> 
@@ -62,10 +70,13 @@ Recommendations
           <input type="text" name="song"><br>
           <button type="submit" class="btn btn-outline-light"> Get Reccomendations </button>
 		 </form> 
-		 <div class="cover">
-      	Songs: <br>
-      {{songs}} <br>
-  </div>
+                 {% if songs %}
+     <div class="cover">
+          Songs: <br>
+        {{songs['Name']}} <br>
+        {{songs['wTeaser']}} <br>
+    </div>
+    {% endif %}
     </div>
   </div>
 
